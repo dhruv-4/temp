@@ -105,4 +105,7 @@ Things to consider when choosing this
 - Should we keep using existing ELK stack or 
 - We also want a different way for alert, sending all messages to slack is not really scalable
 - Distributed tracing, although the last step would still be important to consider.This is where we would be able to see the flow of a request through the system, with some kind of correlation id
+- Some dashboard like this may give you a final outcome https://grafana.infra.comtravo.com/d/BcyIAPz7k/test-dashboard-playground?orgId=1&refresh=10s
+![image](https://user-images.githubusercontent.com/75316673/127340128-82f194d4-b7d2-413a-9d24-f5f178587ccf.png)
+
 
