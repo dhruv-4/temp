@@ -108,7 +108,20 @@ Using pinojs since its faster and has an ecosymtem of logging around it.So we wo
   <summary>6. Redacting customer info before using a 3rd party tool</summary>
   
   Currently when swagger validation fails it logs the entire object that failed. This also includes stuff like `booking.guest_travelers` and `booking.booker` which has all info like email and phone number.
-  So we should try to redact these before actually using a 3rd party tool for visualization
+  So we should try to redact these before actually using a 3rd party tool for visualization.
+
+  It becomes really easy with pinojs
+  
+  ```ts
+    redact: {
+      paths: [
+        'req.headers.authorization',
+        'request_data.body.booker',
+        'request_data.body.guest_travelers'
+      ],
+      remove: true
+    },
+  ```
 </details>
 
 ## Introduce a tool to visualise logs
