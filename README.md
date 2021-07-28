@@ -64,10 +64,11 @@ Error log
 }
 ```
 
-Heres an example of what the change could look like
+Heres an example of what the change could look like, (before vs after)
 <img width="1635" alt="unauthorized_error" src="https://user-images.githubusercontent.com/75316673/127314808-a404b677-204a-4556-9f90-722b358e1500.png">
 
 We checked out replacing `bunyan` with `pinojs` for this.You can check out this https://github.com/comtravo/ct-backend/pull/11487
+Using pinojs since its faster and has an ecosymtem of logging around it.So we woyuld be able to keep the logging format similar
 </details>
 
 <details>
