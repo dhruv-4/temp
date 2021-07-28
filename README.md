@@ -94,7 +94,18 @@ Using pinojs since its faster and has an ecosymtem of logging around it.So we wo
 </details>
 
 <details>
-  <summary>5. Redacting customer info before using a 3rd party tool</summary>
+  <summary>5. Getting rid of <b>ct_inspector</b></summary>
+  
+  Currently we use `ct_inspector` to log and also track the amount of time for third party.
+  This is also used to in this [flight search dashboard](https://grafana.prod.comtravo.com/d/4xPM7fGr8/flight-search-api-details?orgId=1&refresh=5m)
+![image](https://user-images.githubusercontent.com/75316673/127357499-f42e2e51-f196-4834-8627-223428d40635.png)
+
+
+  A idea from Puneeth was to use timeseries db for this.
+</details>
+
+<details>
+  <summary>6. Redacting customer info before using a 3rd party tool</summary>
   
   Currently when swagger validation fails it logs the entire object that failed. This also includes stuff like `booking.guest_travelers` and `booking.booker` which has all info like email and phone number.
   So we should try to redact these before actually using a 3rd party tool for visualization
