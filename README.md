@@ -74,7 +74,9 @@ Using pinojs since its faster and has an ecosymtem of logging around it.So we wo
 <details>
   <summary>2. Adding environment to logs</summary>
   
-  Currently we index logs by environment, this means we have different sources for different environments.This also means it makes it difficult to change sources.If we add environment to logs and index together, we could easily switch logs from the logs itself
+  Currently we index logs by environment, this means we have different sources for different environments.This also means it makes it difficult to change sources.If we add environment to logs and index together, we could easily switch environments in logs from the logs itself
+![image](https://user-images.githubusercontent.com/75316673/127350174-3a631dd1-2a8b-4eb4-8145-3ff96adf70b4.png)
+
 </details>
 
 <details>
@@ -94,7 +96,8 @@ Using pinojs since its faster and has an ecosymtem of logging around it.So we wo
 <details>
   <summary>5. Redacting customer info before using a 3rd party tool</summary>
   
-  Currently when swagger validation fails it logs the entire object that failed. This also includes stuff like `booking. guest_travelers` and `booking.booker` which has all info like email and phone number
+  Currently when swagger validation fails it logs the entire object that failed. This also includes stuff like `booking.guest_travelers` and `booking.booker` which has all info like email and phone number.
+  So we should try to redact these before actually using a 3rd party tool for visualization
 </details>
 
 ## Introduce a tool to visualise logs
@@ -103,8 +106,8 @@ Tools in consideration now
 2. [Jaeger Tracing](https://www.jaegertracing.io/)
 
 Things to consider when choosing this
-- Should we keep using existing ELK stack or 
-- We also want a different way for alert, sending all messages to slack is not really scalable
+- Should we keep using existing ELK stack or use S3 
+- We also want a different way for alerting, sending all messages to slack is not really scalable
 - Distributed tracing, although the last step would still be important to consider.This is where we would be able to see the flow of a request through the system, with some kind of correlation id
 - Some dashboard like this may give you a final outcome https://grafana.infra.comtravo.com/d/BcyIAPz7k/test-dashboard-playground?orgId=1&refresh=10s
 ![image](https://user-images.githubusercontent.com/75316673/127340128-82f194d4-b7d2-413a-9d24-f5f178587ccf.png)
